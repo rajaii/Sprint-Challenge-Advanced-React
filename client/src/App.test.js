@@ -1,9 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import {render} from '@testing-library/jest-dom';
+import '@testing-library/jest-dom/extend-expect'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+import App from './App.js';
+
+test('renders without crashing', () => {
+  const wrapper = render(<App/>);
+  console.log(wrapper);
 });
+
+//test is written properly, can't get it to run because havent configured the packages yet.
